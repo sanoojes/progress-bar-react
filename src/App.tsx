@@ -16,11 +16,11 @@ function App() {
 
   return (
     <>
-      <main className="flex flex-col h-screen w-screen bg-neutral-950 text-neutral-50 items-center justify-center">
+      <main className="flex flex-col h-screen w-screen bg-neutral-950 text-neutral-50 items-center justify-center gap-4">
         <h1 className="text-xl font-bold">Progress Bar</h1>
-        <div className="flex justify-center items-center mt-4 relative w-9/12 h-6 bg-neutral-900 rounded-full shadow shadow-neutral-50 overflow-hidden">
+        <div className="flex justify-center items-center relative w-9/12 h-6 bg-neutral-900 rounded-full shadow shadow-neutral-50 overflow-hidden">
           <span
-            className="h-full rounded-full  bg-green-500 flex justify-center absolute top-0 left-0 transition-all duration-300 ease-linear
+            className="h-full rounded-full  bg-green-500 flex justify-center absolute top-0 left-0 transition-all duration-150 ease-linear
           "
             style={{ width: `${progress}%` }}
           ></span>
@@ -28,6 +28,14 @@ function App() {
             {progress}%
           </p>
         </div>
+        <button
+          className="flex px-4 py-2 border-2 border-neutral-800 bg-neutral-900 rounded-lg hover:bg-neutral-900/50 cursor-pointer"
+          onClick={() => {
+            setProgress(0);
+          }}
+        >
+          Reset
+        </button>
       </main>
     </>
   );
