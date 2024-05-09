@@ -5,13 +5,11 @@ function App() {
 
   useEffect(() => {
     if (progress > 99) return;
-    const startBar = () => {
-      setTimeout(() => {
-        setProgress((prev) => prev + 1);
-      }, 100);
-      console.log(progress);
-    };
-    startBar();
+    const timer = setTimeout(() => {
+      setProgress((prev) => prev + 1);
+    }, 100);
+    console.log(progress);
+    return () => clearTimeout(timer);
   }, [progress]);
 
   return (
