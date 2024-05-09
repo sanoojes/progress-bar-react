@@ -5,6 +5,7 @@ function App() {
 
   useEffect(() => {
     if (progress > 99) return;
+    if (progress > 99) setProgress(100);
     const timer = setTimeout(() => {
       setProgress((prev) => prev + 1);
     }, 100);
